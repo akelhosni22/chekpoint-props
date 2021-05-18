@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import React,{Component} from 'react';
+import propTypes from "prop-types"
+import {Getsdata} from './Profile/Profile component'
 
-function App() {
+
+class App extends Component{
+render (){
+  function getdata () {
+    alert("Stop")
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Getsdata FullName=" Akel Hosni" 
+
+        BIO="I am a fullstack Js developer  with 2 years of experience in Javascript,react, mongo D8, etc. Received best Award and Best StudentTeam while working at Go my Code. "
+        
+
+        profession="FullStack Javascript developer." data={getdata}>
+          <div style={{marginTop:30,marginLeft:25,display:'flex'}}><img src="akel.jpg" alt="text" /></div>
+
+        
+          </Getsdata>
     </div>
   );
+  }
 }
 
+  
+  
+Getsdata.prototype={
+  FullName:propTypes.string.isRequired ,
+  BIO:propTypes.string.isRequired ,
+  profession:propTypes.string.isRequired ,
+
+};
 export default App;
